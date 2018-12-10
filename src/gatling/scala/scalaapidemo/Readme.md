@@ -1,7 +1,7 @@
 ## Scenario
 
+```scala
 package computerdatabase // 1
-
 import io.gatling.core.Predef._ // 2
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
@@ -25,6 +25,7 @@ class BasicSimulation extends Simulation { // 3
     scn.inject(atOnceUsers(1)) // 12
   ).protocols(httpConf) // 13
 }
+```
 
 1. The optional package.
 2. The required imports.
