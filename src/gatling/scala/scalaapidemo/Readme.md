@@ -73,10 +73,12 @@ setUp(
 10. Injects a given number of users following a smooth approximation of the heaviside step function stretched to a given duration.
 11. the maximum duration of your simulation with the method maxDuration.
 
-//  Throttling - This simulation will reach 100 req/s with a ramp of 10 seconds, then hold this throughput for 1 minute, jump to 50 req/s and finally hold this throughput for 2 hours.
-//  setUp(scn.inject(constantUsersPerSec(100) during(30 minutes))).throttle(
-//    reachRps(100) in (10 seconds),
-//    holdFor(1 minute),
-//    jumpToRps(50),
-//    holdFor(2 hours)
-//  )
+**Note: Throttling - This simulation will reach 100 req/s with a ramp of 10 seconds, then hold this throughput for 1 minute, jump to 50 req/s and finally hold this throughput for 2 hours.**
+```scala
+setUp(scn.inject(constantUsersPerSec(100) during(30 minutes))).throttle(
+    reachRps(100) in (10 seconds),
+    holdFor(1 minute),
+    jumpToRps(50),
+    holdFor(2 hours)
+  )
+```
