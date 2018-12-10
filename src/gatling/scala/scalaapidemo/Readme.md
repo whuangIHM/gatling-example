@@ -43,21 +43,23 @@ class BasicSimulation extends Simulation { // 3
 
 ## Simulation
 
-//  setUp(
-//    scn.inject(
-//      nothingFor(4 seconds),          // 1
-//      atOnceUsers(10),                // 2
-//      rampUsers(10) over(5 seconds),  // 3
-//      constantUsersPerSec(20) during(15 seconds), // 4
-//      constantUsersPerSec(20) during(15 seconds) randomized, // 5
-//      rampUsersPerSec(10) to 20 during(10 minutes), // 6
-//      rampUsersPerSec(10) to 20 during(10 minutes) randomized, // 7
-//      splitUsers(1000) into(rampUsers(10) over(10 seconds)) separatedBy(10 seconds), // 8
-//      splitUsers(1000) into(rampUsers(10) over(10 seconds)) separatedBy atOnceUsers(30), // 9
-//      heavisideUsers(1000) over(20 seconds) // 10
-//      rampUsers(1000) over(20 minutes))).maxDuration(10 minutes) // 11
-//    ).protocols(httpConf)
-//  )
+```scala
+setUp(
+    scn.inject(
+      nothingFor(4 seconds),          // 1
+      atOnceUsers(10),                // 2
+      rampUsers(10) over(5 seconds),  // 3
+      constantUsersPerSec(20) during(15 seconds), // 4
+      constantUsersPerSec(20) during(15 seconds) randomized, // 5
+      rampUsersPerSec(10) to 20 during(10 minutes), // 6
+      rampUsersPerSec(10) to 20 during(10 minutes) randomized, // 7
+      splitUsers(1000) into(rampUsers(10) over(10 seconds)) separatedBy(10 seconds), // 8
+      splitUsers(1000) into(rampUsers(10) over(10 seconds)) separatedBy atOnceUsers(30), // 9
+      heavisideUsers(1000) over(20 seconds) // 10
+      rampUsers(1000) over(20 minutes))).maxDuration(10 minutes) // 11
+    ).protocols(httpConf)
+  )
+```
 
 1. Pause for a given duration.
 2. Injects a given number of users at once.
